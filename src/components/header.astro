@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import logo2gt from "~/icons/logo2gt.png";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 
 const navItems = [
@@ -16,8 +17,7 @@ const navItems = [
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <img src={logo2gt} id="logo2gt" class="h-10" />
   </a>
   <div>
     <div class="flex items-center gap-6">

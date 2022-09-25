@@ -32,15 +32,26 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
     <div></div>
     <h2 class="flex flex-col self-end gap-2 sm:gap-4 sm:self-auto txtLanding">
       <div
-        class="font-extrabold tracking-tighter text-center text-4xl gradient-text"
+        class="font-extrabold tracking-tighter text-center text-3xl gradient-text"
       >
         Partageons un moment
       </div>
       <img class="logotitre" src={imgLogo} class="h-24 text-white md:h-32" />
-      <button class="btn">Rejoindre une aventure</button>
+      <div class="relative grid h-full sm:grid-cols-3 place-items-center">
+        <div></div>
+        <a
+          href="https://youtube.com/shrts/sGlh0ptJ4fc"
+          class="flex items-center justify-center gap-3 px-6 py-4 border-2 border-current"
+        >
+          <Icon pack="mdi" name="lock" class="h-8" />
+          <span>Rejoindre une aventure</span>
+        </a>
+        <div></div>
+      </div>
     </h2>
-    <div></div>
   </div>
+
+  <div></div>
 </section>
 
 <style>
