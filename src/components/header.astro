@@ -3,9 +3,10 @@ import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 
 const navItems = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Accueil", url: "#features" },
+  { title: "Activités", url: "#compatibility" },
+  { title: "Nous", url: "#showcase" },
+  { title: "Mon Profil", url: "#showcase" },
 ];
 ---
 
@@ -41,7 +42,6 @@ const navItems = [
       >
         <Icon pack="mdi" name="menu" class="h-8" />
       </button>
-      <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="hidden modal" aria-hidden="true">
       <div class="fixed inset-0 px-8 py-4 bg-default text-default">
@@ -125,6 +125,7 @@ const navItems = [
     @apply fixed top-0 bottom-auto;
     @apply text-default bg-default border-default;
   }
+
   .modal.is-open {
     @apply block;
   }
