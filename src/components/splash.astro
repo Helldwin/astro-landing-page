@@ -1,26 +1,10 @@
 ---
-import { generateImage } from "astro-eleventy-img";
 import { Icon } from "astro-icon";
 import imgLogo from "~/icons/logoSite.png";
 import moon from "~/icons/moon.png";
 import mountains_behind from "~/icons/mountains_behind.png";
 import mountains_front from "~/icons/mountains_front.png";
 import Starfield from "~/components/starfield.astro";
-import HeroImage from "~/components/hero-image.astro";
-
-const widths = [450, 800];
-const sizes = "(min-width: 640px) 42vw, 67vw";
-
-const { webp, avif, png } = generateImage("src/assets/astronaut.png", {
-  widths,
-  formats: ["webp", "avif", "png"],
-  outputDir: "public/assets/images/astronaut",
-  urlPath: "/assets/images/astronaut",
-});
-
-const avifSrcset = avif.map(({ srcset }) => srcset).join(",");
-const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
-const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 ---
 
 <section class="relative h-full bg">
@@ -37,11 +21,12 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
         Partageons un moment
       </div>
       <img class="logotitre" src={imgLogo} class="h-24 text-white md:h-32" />
-      <div class="relative grid h-full sm:grid-cols-3 place-items-center">
+      <div class="relative grid h-full place-items-center">
         <div></div>
         <a
           href="https://youtube.com/shrts/sGlh0ptJ4fc"
-          class="flex items-center justify-center gap-3 px-6 py-4 border-2 border-current"
+          class="btn flex gap-3 px-6 py-4 border-2 border-current"
+          style=""
         >
           <Icon pack="mdi" name="lock" class="h-8" />
           <span>Rejoindre une aventure</span>
@@ -77,6 +62,12 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 
   section img.logotitre {
     z-index: 1000;
+  }
+
+  section a.btn {
+    pointer-events: none;
+    background: gray;
+    opacity: 50%;
   }
 
   section img#moon {

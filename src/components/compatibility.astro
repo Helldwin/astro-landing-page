@@ -1,88 +1,81 @@
 ---
 import ContentSection from "~/components/content-section.astro";
-import CompatibilityList from "~/components/compatibility-list.astro";
+import { Icon } from "astro-icon";
 
-const frameworks = [
+const compatibility = [
   {
-    title: "React",
-    icon: "frameworks/react",
-    url: "https://reactjs.org/",
+    title: "Cinéma 2GETHER",
+    description:
+      "Toutes les semaines, diffusion & groupwatch des films et séries proposés et votés par la communauté !",
+    icon: "mdi:theater",
   },
   {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
+    title: "Jeux de rôles",
+    description:
+      "Une équipe de MJ vous proposeront des scénarios écrit pour l'occasion, permettant de partager un bon moment avec les membres présents.",
+    icon: "mdi:dice-d20",
   },
   {
-    title: "Svelte",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
+    title: "Groupe de Créateurs",
+    description:
+      "Une passion vous anime ? Venez donc partager vos créations avec nous, et participer a des projets communs pour commencer à vous créer un réseau.",
+    icon: "mdi:pencil",
   },
   {
-    title: "Vue",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
+    title: "Soirée Jeux",
+    description:
+      "Toutes les semaines, des soirées sur des jeux multijoueurs avec les membres, du simple loup garou, gartic phone à des parties endiablées de Worms.",
+    icon: "mdi:gamepad-variant",
   },
   {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
+    title: "Tournois",
+    description:
+      "Tout les 1er vendredi du mois, un tournoi est mis en place sur un jeu des soirées ou un jeu créé pour l'occasion. A la fin de l'année les scores des tournois sont aditionner pour offrir un lot au 1er !",
+    icon: "mdi:trophy",
   },
   {
-    title: "Lit",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
-  },
-];
-
-const platforms = [
-  {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
+    title: "Serveurs dédiés",
+    description:
+      "Des serveurs de jeux privés sont disponible pour nos membres à la demande. Actuellement nous avons 2 serveurs Minecraft qui tourne h24 pour vivre de belles aventures avec vous !",
+    icon: "mdi:server",
   },
   {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
+    title: "Jeux de pistes",
+    description:
+      "Des codes étrange apparaisse des fois sur le discord, serez vous capable de suivre l'énigme de bout en bout pour gagner un jeu ?",
+    icon: "mdi:puzzle",
   },
   {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
+    title: "Émissions sur Twitch",
+    description:
+      "Certains de nos moments 2GETHER seront partagé et diffusé sur Twitch, cela sera aussi l'occasion de proposer des émissions plus aboutti.",
+    icon: "mdi:twitch",
   },
   {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
+    title: "Giveaways",
+    description:
+      "Nous offrons régulièrement des jeux à nos membres avec un système de tirage au sort.",
+    icon: "mdi:gift",
   },
 ];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="Actions à distance" id="compatibility">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    Une communauté sur <span class="text-primary">discord</span> ouverte sur parainage
+    et adhésions proposants des évènements réguliers.
   </Fragment>
-  <CompatibilityList
-    title="Frameworks"
-    data={frameworks}
-    url="https://docs.astro.build/core-concepts/framework-components/"
-  />
-  <CompatibilityList
-    title="Platforms"
-    data={platforms}
-    url="https://docs.astro.build/guides/deploy/"
-  />
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      compatibility.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 p-6 border border-default bg-offset">
+          <div class="w-16 h-16 p-3 border-2 border-current rounded-full">
+            <Icon name={icon} />
+          </div>
+          <p class="text-xl font-extrabold text-center">{title}</p>
+          <p class="text-sm text-center text-offset">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
 </ContentSection>
